@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:29:45 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/09 14:11:04 by besalort         ###   ########.fr       */
+/*   Created: 2022/11/09 14:45:27 by besalort          #+#    #+#             */
+/*   Updated: 2022/11/09 15:49:14 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *str, int to_find)
 {
-	char	*new_s;
-	size_t	i;
+	char	*last;
 
-	i = 0;
-	new_s = (char *)s;
-	while (i < n)
-		new_s[i++] = c;
-	return (s);
+	while (str)
+	{
+		if (str == to_find)
+			last = str;
+			str++;
+	}
+	return (last);
 }

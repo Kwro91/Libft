@@ -6,11 +6,11 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:21:53 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/07 15:32:41 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:03:59 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -20,5 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != c)
 		i++;
 	if (s[i] == c)
-		return (s+i);
+		return (s + i);
+	else
+		return (NULL);
 }
