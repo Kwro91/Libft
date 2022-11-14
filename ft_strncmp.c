@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 14:45:27 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/14 11:35:50 by besalort         ###   ########.fr       */
+/*   Created: 2022/11/14 10:56:04 by besalort          #+#    #+#             */
+/*   Updated: 2022/11/14 16:48:37 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strrchr(const char *str, int to_find)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*last;
+	size_t	i;
 
-	while (str)
-	{
-		if (str == to_find)
-			last = str;
-			str++;
-	}
-	return (last);
+	i = 0;
+	while (s1[i] == s2[i] && i < n)
+		i++;
+	return (s1[i] - s2[i]);
 }

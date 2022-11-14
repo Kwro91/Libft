@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 14:45:27 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/14 11:35:50 by besalort         ###   ########.fr       */
+/*   Created: 2022/11/14 15:35:15 by besalort          #+#    #+#             */
+/*   Updated: 2022/11/14 16:51:17 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+static ft_count
 
-char	*ft_strrchr(const char *str, int to_find)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*last;
+	char	*tab;
 
-	while (str)
-	{
-		if (str == to_find)
-			last = str;
-			str++;
-	}
-	return (last);
+	
 }
