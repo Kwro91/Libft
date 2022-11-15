@@ -6,9 +6,11 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:56:04 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/14 16:48:37 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:13:30 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

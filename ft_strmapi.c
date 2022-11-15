@@ -1,26 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 10:38:18 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 13:13:22 by besalort         ###   ########.fr       */
+/*   Created: 2022/11/14 17:39:00 by besalort          #+#    #+#             */
+/*   Updated: 2022/11/15 11:40:14 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+/*
+char	f(unsigned int i, char c)
 {
-	void	*tab;
+	c = 'H';
+	return (c);
+}
+*/
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char			*tab;
+	unsigned int	i;
 
-	if (nmemb == 0 || size == 0)
+	i = 0;
+	if (!s || !f)
 		return (NULL);
-	tab = malloc(size * nmemb);
+	tab = malloc(ft_strlen((char *)s + 1));
 	if (!tab)
 		return (NULL);
-	ft_bzero(tab, nmemb);
-	return ((void *)tab);
+	while (s[i])
+	{
+		tab[i] = f(i, s[i]);
+		i++;
+	}
+	tab[i] = '\0';
+	return (tab);
 }
+/*
+int	main (int ac, char **av)
+{
+	char (*f_ptr)(unsigned int, char) = &f;
+	if (ac == 2)
+		printf("Original : %s\nModif : %s", av[1], ft_strmapi(av[1], f_ptr));
+}*/

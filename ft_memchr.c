@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:42:13 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/14 16:49:57 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:18:09 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ void	*ft_memchr(const void *src, int to_find, size_t size)
 
 	i = 0;
 	new_src = (char *)src;
-	while (new_src && i < size)
+	while (new_src[i] && i < size)
 	{
-		if (new_src == to_find)
-			return ((void *)new_src);
-		new_src++;
+		if (new_src[i] == to_find)
+			return ((void *)&new_src[i]);
 		i++;
 	}
 	return (NULL);

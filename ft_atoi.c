@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char	*str)
 {
 	int	i;
 	int	nb;
@@ -19,7 +19,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	nb = 0;
 	signe = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' ' && str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -35,7 +35,6 @@ int	ft_atoi(char *str)
 	return (nb * signe);
 }
 
-// #include <stdio.h>
 // int     main(int ac, char **av)
 // {
 //     if(ac == 2)

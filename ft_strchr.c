@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:21:53 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/09 16:03:59 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:50:18 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != c)
 		i++;
 	if (s[i] == c)
-		return (s + i);
+		return ((char *)s + i);
 	else
 		return (NULL);
 }

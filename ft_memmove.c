@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:43:35 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/09 16:03:29 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:51:10 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	new_src = (char *)src;
 	if (dest > src)
 	{
-		i = n;
+		i = ft_strlen(new_src);
 		while (i > 0)
 		{
 			new_dest[i] = new_src[i];

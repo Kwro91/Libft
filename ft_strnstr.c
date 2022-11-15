@@ -14,11 +14,11 @@
 
 char	*ft_strnstr(const char *src, const char *to_find, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (ft_strlen(to_find) == 0)
+	if (ft_strlen((char *)to_find) == 0)
 		return ((char *)src);
 	while (src[i] && i < len)
 	{

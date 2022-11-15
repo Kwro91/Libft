@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 14:45:27 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 14:21:17 by besalort         ###   ########.fr       */
+/*   Created: 2022/11/15 16:53:45 by besalort          #+#    #+#             */
+/*   Updated: 2022/11/15 17:45:46 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int to_find)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	char	*last;
-
-	i = 0;
-	last = (char *)&str[ft_strlen((char *)str) + 1];
-	while (str[i])
-	{
-		if (str[i] == to_find)
-			*last = str[i];
-		i++;
-	}
-	return (last);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

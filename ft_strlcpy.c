@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:27:13 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/14 16:50:21 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:09:34 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,16 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
+	size_t	i;
+
+	i = 0;
 	if (ft_strlen(dest) + 1 < size)
-		return (ft_strlen(src) + size);
-	while (src)
-		dest++ = src++;
-	dest = '/0';
-	return (ft_strlen(src));
+		return (ft_strlen((char *)src) + size);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (ft_strlen((char *)src));
 }

@@ -1,29 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 14:45:27 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 14:21:17 by besalort         ###   ########.fr       */
+/*   Created: 2022/11/15 16:55:32 by besalort          #+#    #+#             */
+/*   Updated: 2022/11/15 17:39:18 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int to_find)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	char	*last;
+	long int	nb;
 
-	i = 0;
-	last = (char *)&str[ft_strlen((char *)str) + 1];
-	while (str[i])
+	nb = (long int)n;
+	if (nb == -2147483648)
 	{
-		if (str[i] == to_find)
-			*last = str[i];
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (last);
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = -nb;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd((int)nb / 10, fd);
+		ft_putchar_fd(nb % 10 + 48, fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 3)
+	{
+		ft_putnbr_fd(ft_atoi(av[1]), ft_atoi(av[2]));
+	}
+}
+*/
