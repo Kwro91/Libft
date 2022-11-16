@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:45:27 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 14:21:17 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:06:05 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 char	*ft_strrchr(const char *str, int to_find)
 {
 	size_t	i;
-	char	*last;
 
-	i = 0;
-	last = (char *)&str[ft_strlen((char *)str) + 1];
-	while (str[i])
+	i = ft_strlen(str) + 1;
+	while (i--)
 	{
-		if (str[i] == to_find)
-			*last = str[i];
-		i++;
+		if (str[i] == (char)to_find)
+			return ((char *)str + i);
 	}
-	return (last);
+	return (NULL);
 }

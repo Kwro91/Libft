@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:32:20 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 13:51:32 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:14:53 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s);
+		f(i, &s[i]);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:43:20 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 16:43:21 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:51:14 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_fill(char *src, int i, char c, char **tab)
 	str = malloc((sizeof(char) * count) + 1);
 	if (!str)
 		return (0);
-	if (count != ft_strlen(str))
+	if (count != ft_strlen((const char *)str))
 		libere(tab);
 	j = 0;
 	while (src[i] && src[i] != c)
