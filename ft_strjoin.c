@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:02:48 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/16 11:51:42 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:04:12 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	tab = malloc((ft_strlen(s1) + ft_strlen(s2) - 1));
+	tab = malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
 	while (s1[j])
 		tab[i++] = s1[j++];
 	j = 0;

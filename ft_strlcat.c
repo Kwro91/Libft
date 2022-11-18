@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:42:45 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/16 14:29:43 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:06:56 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dstsize + src_len);
 	if (dstsize > dst_len + 1)
 	{
-		while (src[i] != '\0' && dst_len + 1 + i < dstsize)
+		while (src[i] && dst_len + 1 + i < dstsize)
 		{
 		dst[dst_len + i] = src[i];
 			i++;

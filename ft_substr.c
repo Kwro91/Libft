@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:51:15 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/16 11:53:31 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:47:29 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*tab;
 
 	i = 0;
-	if (start > ft_strlen(s))
+	if (start > ft_strlen(s) + 1)
 	{
 		tab = malloc(1);
+		if (!tab)
+			return (NULL);
 		tab[0] = '\0';
 		return (tab);
 	}
-	tab = malloc(sizeof(char) * ft_strlen(&s[start]));
+	if (ft_strlen(&s[start]) <= len)
+		tab = malloc(sizeof(char) * ft_strlen(&s[start]) + 1);
+	else
+		tab = malloc(len + 1);
 	if (!tab)
 		return (NULL);
-	while (start < len && s[start])
+	while (i < len && s[start])
 		tab[i++] = s[start++];
+	tab[i] = '\0';
 	return (tab);
 }
 /*

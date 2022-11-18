@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:39:00 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/16 11:53:02 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:14:49 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s || !f)
 		return (NULL);
-	tab = malloc(ft_strlen(s + 1));
+	tab = malloc(ft_strlen(s)+1);
 	if (!tab)
 		return (NULL);
 	while (s[i])

@@ -6,11 +6,25 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:35:15 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/16 11:53:21 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:35:11 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	isset(char c, char const *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -20,15 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	j = ft_strlen(s1);
-	if (!s1 || !set)
-		return (NULL);
-	while (s1[i] && ft_strchr(set, s1[i]))
+	while (s1[i] && isset(s1[i], set))
 		i++;
-	while (s1[j] && ft_strchr(set, s1[j]))
+	while (j - 1 > i && isset(s1[j - 1], set))
 		j--;
-	tab = malloc(sizeof(char) * j - i);
-	if (!tab)
-		return (0);
 	tab = ft_substr(s1, i, j - i);
 	return (tab);
 }
