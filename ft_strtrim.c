@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:35:15 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/18 15:35:11 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:55:49 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	char	*tab;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s1);
 	while (s1[i] && isset(s1[i], set))
@@ -41,13 +43,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	tab = ft_substr(s1, i, j - i);
 	return (tab);
 }
-/*
-int main(int ac, char **av)
-{
-	if (ac == 3)
-	{
-		printf("String originale : %s\nNouvelle String : %s", av[1], 
-		ft_strtrim(av[1], av[2]));
-	}
-}
-*/

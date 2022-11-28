@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:55:32 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/15 17:39:18 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:00:32 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(nb + 48, fd);
 }
-/*
-int	main(int ac, char **av)
-{
-	if (ac == 3)
-	{
-		ft_putnbr_fd(ft_atoi(av[1]), ft_atoi(av[2]));
-	}
-}
-*/

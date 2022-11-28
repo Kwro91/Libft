@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:43:20 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/21 14:22:07 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:32:37 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 static void	libere(char **tab, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-	{
-		free(tab[i]);
-		i++;
-	}
+	while (len >= 0)
+		free(tab[len--]);
 	free(tab);
 }
 
@@ -103,6 +97,8 @@ char	**ft_split(char const	*str, char c)
 {
 	char	**tab;
 
+	if (!str)
+		return (NULL);
 	tab = malloc(sizeof(char *) * (ft_countword(str, c) + 1));
 	if (!tab)
 		return (NULL);
@@ -110,20 +106,3 @@ char	**ft_split(char const	*str, char c)
 		return (NULL);
 	return (tab);
 }
-/*
-int	main(int ac, char **av)
-{
-	int		i;
-	char	**tab;
-
-	i = 0;
-	tab = ft_split(av[1], av[2][0]);
-	(void)ac;
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	printf("%s\n", tab[i]);
-}
-*/

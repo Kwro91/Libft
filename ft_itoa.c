@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:40:48 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/16 11:55:55 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/23 14:57:50 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,3 @@ char	*ft_itoa(int n)
 	tab = revtab(tab);
 	return (tab);
 }
-/*
-int	main(int ac, char **av)
-{
-	if (ac == 2)
-		printf("%d devient %s\n" ,ft_atoi(av[1]), ft_itoa(ft_atoi(av[1])));
-}
-*/

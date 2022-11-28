@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *src, const char *to_find, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!src || !to_find)
+		return (NULL);
 	i = 0;
 	if (ft_strlen(to_find) == 0)
 		return ((char *)src);

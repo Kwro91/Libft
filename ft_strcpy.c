@@ -10,10 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
+	if (!dest || !src)
+		return (NULL);
 	i = 0;
 	while (src[i])
 	{

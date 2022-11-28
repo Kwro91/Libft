@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:00:47 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/21 16:07:21 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:11:11 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	void	*p;
-	t_list	*new;
-	
-	new = *lst;
-	while (new)
+	t_list	*stock;
+
+	if (!lst || !*lst || !del)
+		return ;
+	while (*lst)
 	{
-		del(ft_lstlast(new));
-		free(ft_lstlast(new));
+		stock = *lst;
+		*lst = stock->next;
+		ft_lstdelone(stock, del);
 	}
-	new->next = NULL;
+	*lst = NULL;
 }
