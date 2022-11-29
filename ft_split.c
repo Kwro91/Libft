@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:43:20 by besalort          #+#    #+#             */
-/*   Updated: 2022/11/28 16:32:37 by besalort         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:20:33 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_countword(const char *str, char c)
 	return (wd);
 }
 
-char	*ft_fill(char *src, size_t i, char c)
+static char	*ft_fill(char *src, size_t i, char c)
 {
 	size_t	j;
 	size_t	count;
@@ -79,7 +79,7 @@ static int	splitnorm(char **tab, char const *str, char c)
 		if (str[i] && str[i] != c)
 		{
 			tab[j] = (char *)ft_fill((char *)str, i, c);
-			if (ft_strlen(tab[j]) == 0)
+			if (!tab[j])
 			{
 				libere(tab, j);
 				return (0);
